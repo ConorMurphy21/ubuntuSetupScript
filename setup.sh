@@ -1,16 +1,16 @@
-~
 # install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir ~/.vim/plugged
-cp "$1/.vimrc" ./
+cp "$1/.vimrc" ~
 
 # install zsh
-cp "$1/.zshrc" ./
+cp "$1/.zshrc" ~
 apt-get install zsh -y
 chsh -s /bin/zsh
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc
 # install powerlevel10k
+cp "$1/.p10k.zsh" ~
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
